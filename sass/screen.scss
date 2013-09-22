@@ -1,0 +1,173 @@
+
+@import "compass/css3";
+@import "compass/utilities";
+
+@import "variables";
+
+@import "normalize";
+
+body {
+	width: 100%;
+	background-image: url('../images/subtle_stripes.png');
+	font-size: $fontBase;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0;
+}
+
+h1 {
+	font-size: $step3 + em;
+	text-align: center;
+	background-color: $darkColor;
+	color: $lightColor;
+	text-shadow: 1.6px 2px 0px $black;
+	margin: 0;
+	padding: $step-2 + em $step1 + em;
+}
+
+a {
+	text-decoration: none;
+}
+
+nav {
+	float: left;
+	margin: $step2 + em;
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+				li {
+					background-color: $darkColor;
+					text-transform: capitalize;
+					border: 1px solid $middleColor;
+					margin: $step-1 + em $step-1 + em;
+					padding: $step-2 + em $step2 + em $step-2 + em $step-1 + em;
+					// box-shadow: $step3 + px $step3 + px 0px 0px $black;
+						&:first-of-type {
+							margin-top: 0;
+						}
+						&:last-of-type {
+							margin-bottom: 0;
+						}
+						a{
+							color: $lightColor;
+							text-shadow: 0.96px 0.96px 0px $black;
+						}
+				}
+		}
+}
+
+form {
+	@include clearfix;
+	width: 86%;
+	margin: 0 auto;
+	padding: $step1 + em $step2 + em;
+}
+
+label {
+	display: inline-block;
+	width: $step5 + em;
+	text-align: right;
+	background-color: $darkColor;
+	color: $lightColor;
+	text-shadow: 0.76px 0.76px 0px $black;
+	padding: $step-4 + em $step-3 + em;
+}
+
+label, input, textarea {
+	margin: $step-1 + em 0;
+}
+
+input:not([type="submit"]):not([type="reset"]), textarea {
+	width: 56%;
+	padding: $step-4 + em $step-3 + em;
+	border: none;
+}
+
+button {
+	background-color: $darkColor;
+	color: $lightColor;
+	font-size: $step2 + em;
+	text-shadow: 0.76px 0.76px 0px $black;
+	padding: $step-3 + em $step-1 + em;
+	border: none;
+	transition: all 0.4s ease-in;
+		a {
+			color: $lightColor;
+			text-decoration: none;
+		}
+		&:hover {
+			color: $thirdmiddleColor;
+		}
+}
+
+button#ajaxCall {
+	float: right;
+}
+
+#entryFormWrap {
+	@include clearfix;
+	float: left;
+	width: 35%;
+	background-color: $middleColor;
+	margin: $step2 + em;
+}
+
+#ajaxTarget {
+	@include clearfix;
+	float: left;
+	background-color: $altmiddleColor;
+	margin: $step2 + em;
+	padding: $step-1 + em $step2 + em;
+	opacity: 0;
+	transition: opacity 1.4s ease;
+		h2 {
+			margin: 0;
+			text-align: center;
+			color: lighten($altlightColor, 6);
+			text-shadow: 0.56px 0.6px 0px $black;
+			font-weight: bold;
+			letter-spacing: $step2 + px;
+		}
+		p {
+			width: $step4 * $step4 + em;
+			border: 1px solid $black;
+			padding: $step-3 + em $step-2 + em;
+			background-color: lighten($altmiddleColor, 8);
+		}
+		#homeLink {
+			float: left;
+			background-color: $thirdmiddleColor;
+			padding: $step-2 + em $step-1 + em;
+			box-shadow: 2px 2px 0px 0px $altdarkColor;
+				a {
+					text-decoration: none;
+					color: $white;
+				}
+		}
+}
+#contentWrap {
+	width: 86%;
+	margin: 0 auto;
+	padding: $step2 + em 0;
+		section {
+			background-color: $middleColor;
+			width: 56%;
+			margin: 0 auto;
+			padding-bottom: $step2 + em;
+				h2 {
+					color: $thirdmiddleColor;
+					text-align: center;
+					background-color: $altdarkColor;
+					padding: $step-2 + em 0;
+				}
+				p {
+					width: 86%;
+					margin: $step2 + em auto;
+					padding: $step-1 + em;
+					min-height: 300px;
+					background-color: $altmiddleColor;
+				}
+		}
+}
