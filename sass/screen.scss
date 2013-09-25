@@ -58,7 +58,7 @@ nav {
 		}
 }
 
-form {
+#entryForm {
 	@include clearfix;
 	width: 86%;
 	margin: 0 auto;
@@ -85,6 +85,14 @@ input:not([type="submit"]):not([type="reset"]), textarea {
 	border: none;
 }
 
+label[for="searchBox"] {
+	margin-left: $step2 + em;
+}
+
+#searchBox {
+	width: $step6 + em;
+}
+
 button {
 	background-color: $darkColor;
 	color: $lightColor;
@@ -104,6 +112,12 @@ button {
 
 button#ajaxCall {
 	float: right;
+}
+
+#searchLabel {
+	background-color: $thirdmiddleColor;
+	text-shadow: none;
+	color: $darkColor;
 }
 
 #entryFormWrap {

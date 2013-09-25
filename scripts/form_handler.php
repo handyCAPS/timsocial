@@ -7,41 +7,28 @@ $screen_name 	= trim($_REQUEST['screen_name']);
 $bio 			= trim($_REQUEST['bio']);
 $db 			= new tiso_mysqli;
 
-function check_screen_name($check_user_screen_name) {
+$name = $db->real_escape_string($name);
+$email = $db->real_escape_string($email);
+$screen_name = $db->real_escape_string($screen_name);
+$bio = $db->real_escape_string($bio);
+
+function check_screen_name($check_user_screen_name, $db) {
 	
-	$query = "SELECT user_screen_name FROM users;";
+	$query = "SELECT user_screen_name FROM users WHERE user_screen_name = '$check_user_screen_name'";
 	$result = $db->query($query);
-	$row = $result->fetch_all();
-	$name_free = true;
-	$i = count($row)-1;
-
-	return $row;
+	$rowcount = $result->num_rows;
 	
-	// while ($i >= 0) {
-	// 		if($row[$i] === $check_user_screen_name) {
-	// 			$name_free = false;
-	// 		}
-	// 		$i--;
-	// 	}
-
-	// 	return $name_free;
-
+	return $rowcount == 0;
 }
 
-function fill_database($user_name, $user_email, $user_screen_name, $user_bio, $db) {
-	
-	$user_name = $db->real_escape_string($user_name);
-	$user_email = $db->real_escape_string($user_email);
-	$user_screen_name = $db->real_escape_string($user_screen_name);
-	$user_bio = $db->real_escape_string($user_bio);
-
-	// $free = check_screen_name($user_screen_name);
-		$query = " INSERT INTO users (user_name, user_email, user_screen_name, user_bio) VALUES ( ' $user_name ' , ' $user_email ' , ' $user_screen_name ' , ' $user_bio ');";
-			$db->query($query);
-
-}
 
 function return_form_info($user_name, $user_email, $user_screen_name, $user_bio, $db) {
+
+	if (check_screen_name($user_screen_name, $db)) {
+		$query = "INSERT INTO users (user_name, user_email, user_screen_name, user_bio)
+		          VALUES ( '$user_name', '$user_email', '$user_screen_name', '$user_bio')";
+			$db->query($query);
+	}
 
 	$header 		= "<h2>{$user_name}</h2>";
 	$body 			= "<article>
@@ -49,15 +36,19 @@ function return_form_info($user_name, $user_email, $user_screen_name, $user_bio,
 							<p>Email me at : {$user_email}</p>
 							<p>Something about me :<br> {$user_bio}</p>
 							<div id='homeLink'>
-							<a href='/timsocial/views?user_id=" . $db->insert_id .  "'>Ga naar profiel</a>
+							<a href='/timsocial/user_page.php?user_id=" . $db->insert_id .  "'>Ga naar profiel</a>
 							</div>
 						</article>";
 
-	echo '<div>' . $header . $body  . '</div>';
+	if ($db->insert_id != 0) {
+		echo '<div>' . $header . $body  . '</div>';
+	} else {
+		echo 'Deze user name bestaat al !';
+	}
 
 
 }
 
-fill_database($name, $email, $screen_name, $bio, $db);
 return_form_info($name, $email, $screen_name, $bio, $db);
+
 

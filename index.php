@@ -1,23 +1,5 @@
-<?php require_once "scripts/get_menu.php"; ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>My Social Network</title>
-	<link rel="stylesheet" type="text/css" href="stylesheets/screen.css">
-</head>
-<body>
-<div id="outerWrap">
-	<header>
-		<a href="http://localhost/timsocial"><h1>My Social Network</h1></a>
-		
-	</header>
+<?php include "scripts/header.php"; ?>
 	<section id="mainContent">
-		<nav>
-			<ul id="getMenu">
-				<?php list_users(); ?>
-			</ul>
-		</nav>
 		<section id="entryFormWrap">
 			<form id="entryForm">
 				<label for="name">Naam :</label>
@@ -40,6 +22,4 @@
 <!-- ajax  -->
 
 <script type="text/javascript" src="js/ajax.js"></script>
-
-</body>
-</html>
+<?php include "scripts/footer.php" ?>

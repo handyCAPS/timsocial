@@ -1,4 +1,4 @@
-/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
+/* normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -248,7 +248,7 @@ figure {
  */
 /* line 253, ../sass/_normalize.scss */
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid silver;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -466,7 +466,7 @@ nav ul li a {
 }
 
 /* line 61, ../sass/screen.scss */
-form {
+#entryForm {
   overflow: hidden;
   *zoom: 1;
   width: 86%;
@@ -498,6 +498,16 @@ input:not([type="submit"]):not([type="reset"]), textarea {
 }
 
 /* line 88, ../sass/screen.scss */
+label[for="searchBox"] {
+  margin-left: 1.618em;
+}
+
+/* line 92, ../sass/screen.scss */
+#searchBox {
+  width: 11.08901em;
+}
+
+/* line 96, ../sass/screen.scss */
 button {
   background-color: #152c42;
   color: #8c9cab;
@@ -507,22 +517,29 @@ button {
   border: none;
   transition: all 0.4s ease-in;
 }
-/* line 96, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 button a {
   color: #8c9cab;
   text-decoration: none;
 }
-/* line 100, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 button:hover {
   color: #f36e30;
 }
 
-/* line 105, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 button#ajaxCall {
   float: right;
 }
 
-/* line 109, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
+#searchLabel {
+  background-color: #f36e30;
+  text-shadow: none;
+  color: #152c42;
+}
+
+/* line 123, ../sass/screen.scss */
 #entryFormWrap {
   overflow: hidden;
   *zoom: 1;
@@ -532,7 +549,7 @@ button#ajaxCall {
   margin: 1.618em;
 }
 
-/* line 117, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 #ajaxTarget {
   overflow: hidden;
   *zoom: 1;
@@ -543,7 +560,7 @@ button#ajaxCall {
   opacity: 0;
   transition: opacity 1.4s ease;
 }
-/* line 125, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 #ajaxTarget h2 {
   margin: 0;
   text-align: center;
@@ -552,47 +569,47 @@ button#ajaxCall {
   font-weight: bold;
   letter-spacing: 1.618px;
 }
-/* line 133, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 #ajaxTarget p {
   width: 17.94201em;
   border: 1px solid black;
   padding: 0.23608em 0.38198em;
   background-color: #72acab;
 }
-/* line 139, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #ajaxTarget #homeLink {
   float: left;
   background-color: #f36e30;
   padding: 0.38198em 0.61805em;
   box-shadow: 2px 2px 0px 0px #154241;
 }
-/* line 144, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #ajaxTarget #homeLink a {
   text-decoration: none;
   color: white;
 }
 
-/* line 150, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #contentWrap {
   width: 86%;
   margin: 0 auto;
   padding: 1.618em 0;
 }
-/* line 154, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 #contentWrap section {
   background-color: #465f77;
   width: 56%;
   margin: 0 auto;
   padding-bottom: 1.618em;
 }
-/* line 159, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 #contentWrap section h2 {
   color: #f36e30;
   text-align: center;
   background-color: #154241;
   padding: 0.38198em 0;
 }
-/* line 165, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 #contentWrap section p {
   width: 86%;
   margin: 1.618em auto;
