@@ -1,4 +1,4 @@
-/* normalize.css v2.1.2 | MIT License | git.io/normalize */
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -248,7 +248,7 @@ figure {
  */
 /* line 253, ../sass/_normalize.scss */
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -629,12 +629,18 @@ button#ajaxCall {
 /* line 195, ../sass/screen.scss */
 #searchResults ul li {
   background-color: #152c42;
+  color: #8c9cab;
   padding: 0.61805em;
   margin: 1.618em 0;
 }
-/* line 199, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 #searchResults ul li a {
   color: #8c9cab;
   display: inline-block;
   width: 100%;
+}
+
+/* line 209, ../sass/screen.scss */
+.ui-menu-item:hover {
+  background-color: rgba(70, 119, 118, 0.7);
 }

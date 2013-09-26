@@ -1,12 +1,4 @@
-<?php require_once '../scripts/get_user.php'; ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Profiel <?php echo $user_name; ?></title>
-	<link rel="stylesheet" type="text/css" href="../stylesheets/screen.css">
-</head>
-<body>
+<?php require_once '../scripts/header.php'; ?>
 
 <div id="outerWrap">
 	<header>
@@ -19,7 +11,4 @@
 			<p id="userBio"><?php echo $user_bio; ?></p>
 		</section>
 	</div><!--  end contentWrap  -->
-</div><!--  end outerWrap  -->
-
-</body>
-</html>
+<?php include "../scripts/footer.php"; ?>

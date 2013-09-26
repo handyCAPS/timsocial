@@ -15,7 +15,7 @@ if ($type === 'User Name') {
 	$dbtype = 'user_screen_name';
 }
 
-$query = "SELECT user_name, user_id, user_screen_name FROM users WHERE " . $dbtype . " = '" . $name . "'";
+$query = "SELECT user_name, user_id, user_screen_name FROM users WHERE " . $dbtype . " LIKE '%" . $name . "%'";
 $result = $db->query($query);
 $row = $result->fetch_all();
 $row_count = count($row);
@@ -23,7 +23,7 @@ $row_count = count($row);
 function display_search_results($row) {
 	if ($row) {
 		foreach ($row as $key => $value) {
-			echo '<li><a href="user_page.php?user_id=' . $value[1] . '">' . $value[0] . ' ( ' . $value[2] . ' ) </a></li>';
+			echo '<li><a href="user_page.php?user_id=' . $value[1] . '">' . $value[0] . ' ( \'' . trim($value[2]) . '\' ) </a></li>';
 		}
 	} else {
 		echo '<li>Geen resultaten</li>';
