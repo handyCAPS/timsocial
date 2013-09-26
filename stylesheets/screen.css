@@ -617,3 +617,24 @@ button#ajaxCall {
   min-height: 300px;
   background-color: #5b9a99;
 }
+
+/* line 190, ../sass/screen.scss */
+#searchResults h3 {
+  margin: 0.61805em;
+}
+/* line 193, ../sass/screen.scss */
+#searchResults ul {
+  list-style: none;
+}
+/* line 195, ../sass/screen.scss */
+#searchResults ul li {
+  background-color: #152c42;
+  padding: 0.61805em;
+  margin: 1.618em 0;
+}
+/* line 199, ../sass/screen.scss */
+#searchResults ul li a {
+  color: #8c9cab;
+  display: inline-block;
+  width: 100%;
+}

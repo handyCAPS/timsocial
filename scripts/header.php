@@ -5,6 +5,7 @@
 <head>
 	<title>My Social Network</title>
 	<link rel="stylesheet" type="text/css" href="stylesheets/screen.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui-1.10.3.custom.min.css">
 </head>
 <body>
 <div id="outerWrap">

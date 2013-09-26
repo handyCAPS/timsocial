@@ -185,3 +185,22 @@ button#ajaxCall {
 				}
 		}
 }
+
+#searchResults {
+		h3 {
+			margin: $step-1 + em;
+		}
+		ul {
+			list-style: none;
+				li {
+					background-color: $darkColor;
+					padding: $step-1 + em;
+					margin: $step2 + em 0;
+						a {
+							color: $lightColor;
+							display: inline-block;
+							width: 100%;
+						}
+				}
+		}
+}

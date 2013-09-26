@@ -7,15 +7,15 @@ $type = trim($_POST['searchFor']);
 $db = new tiso_mysqli();
 
 $name = $db->real_escape_string($name);
-$type = $db->real_escape_string($type);
+$dbtype = $db->real_escape_string($type);
 
 if ($type === 'User Name') {
-	$type = 'user_name';
-} else if ($type === 'Screen Name') {
-	$type = 'user_screen_name';
+	$dbtype = 'user_name';
+} else if ($dbtype === 'Screen Name') {
+	$dbtype = 'user_screen_name';
 }
 
-$query = "SELECT " . $type . ", user_id FROM users WHERE " . $type . " = '" . $name . "'";
+$query = "SELECT user_name, user_id, user_screen_name FROM users WHERE " . $dbtype . " = '" . $name . "'";
 $result = $db->query($query);
 $row = $result->fetch_all();
 $row_count = count($row);
@@ -23,10 +23,10 @@ $row_count = count($row);
 function display_search_results($row) {
 	if ($row) {
 		foreach ($row as $key => $value) {
-			echo '<li><a href="user_page.php?user_id=' . $value[1] . '">' . $value[0] . '</a></li>';
+			echo '<li><a href="user_page.php?user_id=' . $value[1] . '">' . $value[0] . ' ( ' . $value[2] . ' ) </a></li>';
 		}
 	} else {
-		echo '<li> Geen resultaten</li>';
+		echo '<li>Geen resultaten</li>';
 	}
 }
 
