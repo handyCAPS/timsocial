@@ -7,7 +7,7 @@
 <head>
 	<title>
 	<?php 
-		if ($user_name) {
+		if (isset($user_name)) {
 			echo 'Profiel ' . $user_name;
 		} else {
 			echo "My Social Network";
