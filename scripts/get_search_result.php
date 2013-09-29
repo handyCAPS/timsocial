@@ -23,7 +23,7 @@ $row_count = count($row);
 function display_search_results($row) {
 	if ($row) {
 		foreach ($row as $key => $value) {
-			echo '<li><a href="user_page.php?user_id=' . $value[1] . '">' . $value[0] . ' ( \'' . trim($value[2]) . '\' ) </a></li>';
+			echo '<li><a href="?page=user_page&user_id=' . $value[1] . '">' . $value[0] . ' ( \'' . trim($value[2]) . '\' ) </a></li>';
 		}
 	} else {
 		echo '<li>Geen resultaten</li>';

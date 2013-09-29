@@ -1,4 +1,14 @@
 </div><!--  end outerWrap  -->
+<?php 
+	if (isset($_REQUEST['page'])) {
+		$page = $_REQUEST['page'];
+		switch ($page) {
+			case 'new_user_form':
+				echo '<script type="text/javascript" src="js/ajax.js"></script>';
+				break;
+		}
+	}
+ ?>
 <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script type="text/javascript">

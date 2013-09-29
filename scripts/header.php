@@ -1,5 +1,23 @@
 <?php 
-	require_once "scripts/get_menu.php";
+	require_once "scripts/list_pages.php";
+	if (isset($_REQUEST['page'])) {
+		$page = $_REQUEST['page'];
+		switch ($page) {
+			case 'user_page':
+				require_once 'scripts/get_user.php';
+				require_once 'scripts/get_comments.php';
+				break;
+			case 'list_users':
+				require_once 'scripts/get_user.php';
+				break;
+			case 'update_user_form':
+				require_once 'scripts/get_user.php';
+				break;
+			case 'search_results':
+				require_once 'scripts/get_search_result.php';
+				break;
+		}
+	}
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +39,7 @@
 <div id="outerWrap">
 	<header>
 		<a href="http://localhost/timsocial"><h1>My Social Network</h1></a>
-		<form name="searchForm" method="POST" action="search_results.php">
+		<form name="searchForm" method="POST" action="index.php?page=search_results">
 			<label for="searchBox" id="searchLabel">Zoek naar :</label>
 			<input type="text" id="searchBox" name="searchBox">
 			<select name="searchFor" id="searchType">
@@ -34,7 +52,7 @@
 	</header>
 		<nav>
 			<ul id="getMenu">
-				<?php list_users(); ?>
+				<?php list_pages(); ?>
 			</ul>
 		</nav>
 		

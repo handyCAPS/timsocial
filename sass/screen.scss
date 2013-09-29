@@ -50,9 +50,11 @@ nav {
 						&:last-of-type {
 							margin-bottom: 0;
 						}
-						a{
+						a {
 							color: $lightColor;
 							text-shadow: 0.96px 0.96px 0px $black;
+							display: inline-block;
+							width: 100%;
 						}
 				}
 		}
@@ -60,14 +62,14 @@ nav {
 
 #entryForm {
 	@include clearfix;
-	width: 86%;
+	width: 89%;
 	margin: 0 auto;
 	padding: $step1 + em $step2 + em;
 }
 
 label {
 	display: inline-block;
-	width: $step5 + em;
+	width: $step5 +$step2 + em;
 	text-align: right;
 	background-color: $darkColor;
 	color: $lightColor;
@@ -110,8 +112,13 @@ button {
 		}
 }
 
-button#ajaxCall {
+.bottom_button {
+	@extend button;
 	float: right;
+}
+
+#listUsersButton {
+	float: left;
 }
 
 #searchLabel {
@@ -120,12 +127,16 @@ button#ajaxCall {
 	color: $darkColor;
 }
 
-#entryFormWrap {
+.entryFormWrap {
 	@include clearfix;
 	float: left;
-	width: 35%;
+	width: 55%;
 	background-color: $middleColor;
-	margin: $step2 + em;
+	margin: $step2 + em auto;
+}
+
+#createUserForm {
+	width: 38%;
 }
 
 #ajaxTarget {
@@ -161,29 +172,52 @@ button#ajaxCall {
 				}
 		}
 }
+
 #contentWrap {
-	width: 86%;
-	margin: 0 auto;
-	padding: $step2 + em 0;
+	width: 89%;
+	margin: 0 auto $step3 + em;
+	padding: $step2 + em 0 0;
 		section {
+			@include clearfix;
 			background-color: $middleColor;
-			width: 56%;
-			margin: 0 auto;
-			padding-bottom: $step2 + em;
+			width: 55%;
+			margin: 0 auto $step2 + em;
 				h2 {
-					color: $thirdmiddleColor;
+					color: desaturate($darkColor, 16);
+					text-shadow: 0.8px 0.86px 0px $white;
 					text-align: center;
-					background-color: $altdarkColor;
+					background-color: $thirdmiddleColor;
 					padding: $step-2 + em 0;
 				}
 				p {
-					width: 86%;
-					margin: $step2 + em auto;
+					margin: $step2 + em;
 					padding: $step-1 + em;
-					min-height: 300px;
-					background-color: $altmiddleColor;
+					background-color: saturate($lightColor, ($step6 * $step2));
+				}
+				ul {
+					list-style: none;
+					padding: 0;
+						li {
+							margin: $step-1 + em $step2 + em;
+							padding: $step-1 + em $step-2 + em;
+							background-color: $darkColor;
+							width: 55%;
+								a {
+									color: $lightColor;
+								}
+						}
 				}
 		}
+		#comments {
+			h2 {
+				background-color: $darkColor;
+				color: $thirdmiddleColor;
+				text-shadow: 0.8px 0.86px 0px $black;
+			}
+			footer {
+				margin: $step-1 + em;
+			}
+	}
 }
 
 #searchResults {
@@ -209,3 +243,11 @@ button#ajaxCall {
 .ui-menu-item:hover {
 	background-color: $middleColorOverlay;
 }
+
+#userContent {
+		p {
+			min-height: $step3 * $step5 + em;
+		}
+}
+
+

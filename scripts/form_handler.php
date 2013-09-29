@@ -36,7 +36,7 @@ function return_form_info($user_name, $user_email, $user_screen_name, $user_bio,
 							<p>Email me at : {$user_email}</p>
 							<p>Something about me :<br> {$user_bio}</p>
 							<div id='homeLink'>
-							<a href='/timsocial/user_page.php?user_id=" . $db->insert_id .  "'>Ga naar profiel</a>
+							<a href='/timsocial?page=user_page&user_id=" . $db->insert_id .  "'>Ga naar profiel</a>
 							</div>
 						</article>";
 
