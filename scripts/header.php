@@ -1,5 +1,7 @@
 <?php 
 	require_once "scripts/list_pages.php";
+	require_once "scripts/authorization.php";
+	
 	if (isset($_REQUEST['page'])) {
 		$page = $_REQUEST['page'];
 		switch ($page) {

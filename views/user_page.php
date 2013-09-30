@@ -7,9 +7,10 @@
 		<form method="POST" action="?page=update_user_form&user_id=<?php echo $user_id; ?>">
 			<input type="submit" value="Update" id="updateButton" class="bottom_button">
 		</form>
-		<form method="POST" action="scripts/delete_user.php?user_id=<?php echo $user_id; ?>">
-			<input type="submit" value="Delete" id="deleteUserButton">
-		</form>
+		<!-- <form method="POST" action="scripts/delete_user.php?user_id=<?php echo $user_id; ?>"> -->
+			<!-- <input type="submit" value="Delete" id="deleteUserButton"> -->
+		<!-- </form> -->
+		<button id="deleteUserButton" onclick="confirmDelete(<?php echo $user_id; ?>);">Delete</button>
 	</section>
 	<section id="comments">
 		<?php get_comments(); ?>
@@ -23,7 +24,7 @@
 			<input type="text" name="mesa_poster">
 			<label for="mesa_content">Your comment</label>
 			<textarea name="mesa_content" rows="8"></textarea>
-			<input type="submit" value="submit" class="bottom_button">
+			<div><input type="submit" value="submit" class="bottom_button"></div>
 		</form>
 	</section>
 </div><!--  end contentWrap  -->

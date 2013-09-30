@@ -51,7 +51,7 @@ nav {
 							margin-bottom: 0;
 						}
 						a {
-							color: $lightColor;
+							color: lighten(saturate($lightColor, 16), 6);
 							text-shadow: 0.96px 0.96px 0px $black;
 							display: inline-block;
 							width: 100%;

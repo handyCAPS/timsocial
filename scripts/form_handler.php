@@ -5,6 +5,7 @@ $name 			= trim($_REQUEST['name']);
 $email 			= trim($_REQUEST['email']);
 $screen_name 	= trim($_REQUEST['screen_name']);
 $bio 			= trim($_REQUEST['bio']);
+$password		= trim($_REQUEST['password']);
 $db 			= new tiso_mysqli;
 
 $name = $db->real_escape_string($name);
@@ -22,11 +23,11 @@ function check_screen_name($check_user_screen_name, $db) {
 }
 
 
-function return_form_info($user_name, $user_email, $user_screen_name, $user_bio, $db) {
+function return_form_info($user_name, $user_email, $user_screen_name, $user_password, $user_bio, $db) {
 
 	if (check_screen_name($user_screen_name, $db)) {
-		$query = "INSERT INTO users (user_name, user_email, user_screen_name, user_bio)
-		          VALUES ( '$user_name', '$user_email', '$user_screen_name', '$user_bio')";
+		$query = "INSERT INTO users (user_name, user_email, user_screen_name, user_password, user_bio)
+		          VALUES ( '$user_name', '$user_email', '$user_screen_name', '$user_password', '$user_bio')";
 			$db->query($query);
 	}
 
@@ -49,6 +50,6 @@ function return_form_info($user_name, $user_email, $user_screen_name, $user_bio,
 
 }
 
-return_form_info($name, $email, $screen_name, $bio, $db);
+return_form_info($name, $email, $screen_name, $password, $bio, $db);
 
 

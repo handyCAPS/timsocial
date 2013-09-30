@@ -7,6 +7,7 @@
 	var name = document.getElementById('name');
 	var email = document.getElementById('email');
 	var screenName = document.getElementById('screenName');
+	var passWord = document.getElementById('passWord');
 	var bio = document.getElementById('bio');
 
 	
@@ -20,8 +21,9 @@
 		var nameValue = name.value;
 		var emailValue = email.value;
 		var screenNameValue = screenName.value;
+		var passWordValue = passWord.value;
 		var bioValue = bio.value;
-		var queryString = '?name=' + nameValue + '&email=' + emailValue + '&screen_name=' + screenNameValue + '&bio=' + bioValue;
+		var queryString = '?name=' + nameValue + '&email=' + emailValue + '&screen_name=' + screenNameValue + '&password=' + passWordValue + '&bio=' + bioValue;
 		ajaxCall('scripts/form_handler.php', queryString);
 	}
 
@@ -45,7 +47,7 @@
 
 
 		xhr.onreadystatechange = displayReturn;
-		xhr.open('GET', url + query);
+		xhr.open('POST', url + query);
 		xhr.send();
 	}
 
