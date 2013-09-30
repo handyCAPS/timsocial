@@ -4,8 +4,11 @@
 		<h2><?php echo $user_screen_name; ?> ( <?php echo $user_name; ?> )</h2>
 		<button id="userEmail"><a href="mailto:<?php echo $user_email; ?>">Email Me</a></button>
 		<p id="userBio"><?php echo $user_bio; ?></p>
-		<form method="POST" action="?page=update_user_form&user_id=<?php echo $user_id ?>">
+		<form method="POST" action="?page=update_user_form&user_id=<?php echo $user_id; ?>">
 			<input type="submit" value="Update" id="updateButton" class="bottom_button">
+		</form>
+		<form method="POST" action="scripts/delete_user.php?user_id=<?php echo $user_id; ?>">
+			<input type="submit" value="Delete" id="deleteUserButton">
 		</form>
 	</section>
 	<section id="comments">
